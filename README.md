@@ -9,23 +9,22 @@ The PiFi is an ongoing project that uses the Piratebox code as it’s starting p
 As we add newer features and functionalities to PiFi, we shall keep updating this readme file to appropriately guide any reader to be able to source the required hardware, software, and replicate the PiFi to whatever level of sophistication it stands at, at our end.
 
 
-## PiFi v 1.0
+### PiFi v 1.0
 
 Currently the PiFi has been configured as a self-standing wifi hotspot, which is NOT connected to the internet. Users can connect to the PiFi, and through the browser they can access the PiFi webpage. Here, they can share or view video content.
 
-## Who is this Read Me for?
+### Who is this Read Me for?
 
 This readme has been written with the intention that even someone with little to no knowledge of the UNIX command line interface (and code in general), can follow, and successfully configure PiFi v 1.0. If this is still not comprehensive, or if at all, too detailed, then please let us know! Any and all kinds of feedback are welcome.
 
 
 
 
-1.0// Components Needed
+## 1.0// Components Needed
 
-Hardware
-Raspberry Pi 3 or higher.
-You could use an older version of the Raspberry Pi as well, but for that, you will need an additional component: A USB Wifi Adapter like this one. 
-You’ll have to do this since the Pi versions before 3 do not have inbuilt wifi card.
+### Hardware
+1. *Raspberry Pi 3 or higher*<br>
+You could use an older version of the Raspberry Pi as well, but for that, you will need an additional component: A USB Wifi Adapter like this <a href="https://www.amazon.in/Edimax-EW-7811Un-Wi-Fi-Adapter-Black/dp/B003MTTJOY/ref=sr_1_1_sspa?ie=UTF8&qid=1541314937&sr=8-1-spons&keywords=edimax+wifi+adapter&psc=1" target="_blank">one</a>. You’ll have to do this since the Pi versions before 3 do not have inbuilt wifi card.
 USB - 16 GB - formatted to FAT32
 SD Card - 8 GB
 Power adapter for the Raspberry Pi.
