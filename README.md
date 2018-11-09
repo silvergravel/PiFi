@@ -25,7 +25,7 @@ This readme has been written with the intention that even someone with little to
 ### Hardware
 1. **Raspberry Pi 3 or higher**<br>
 You could use an older version of the Raspberry Pi as well, but for that, you will need an additional component: A USB Wifi Adapter like this <a href="https://www.amazon.in/Edimax-EW-7811Un-Wi-Fi-Adapter-Black/dp/B003MTTJOY/ref=sr_1_1_sspa?ie=UTF8&qid=1541314937&sr=8-1-spons&keywords=edimax+wifi+adapter&psc=1" target="_blank">one</a>. You’ll have to do this since the Pi versions before 3 do not have inbuilt wifi card.
-USB - 16 GB - formatted to FAT32
+2. (need to continue formatting from here.) USB - 16 GB - formatted to FAT32
 SD Card - 8 GB
 Power adapter for the Raspberry Pi.
 Alternately, you could also use a power bank to power up the PiFi. We have tested it using this power bank, and it works well.
