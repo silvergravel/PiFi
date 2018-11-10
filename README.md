@@ -24,17 +24,15 @@ This readme has been written with the intention that even someone with little to
 
 ### Hardware
 1. **Raspberry Pi 3 or higher**<br>
-You could use an older version of the Raspberry Pi as well, but for that, you will need an additional component: A USB Wifi Adapter like this <a href="https://www.amazon.in/Edimax-EW-7811Un-Wi-Fi-Adapter-Black/dp/B003MTTJOY/ref=sr_1_1_sspa?ie=UTF8&qid=1541314937&sr=8-1-spons&keywords=edimax+wifi+adapter&psc=1" target="_blank">one</a>. You’ll have to do this since the Pi versions before 3 do not have inbuilt wifi card.
-2. (need to continue formatting from here.) USB - 16 GB - formatted to FAT32
-SD Card - 8 GB
-Power adapter for the Raspberry Pi.
-Alternately, you could also use a power bank to power up the PiFi. We have tested it using this power bank, and it works well.
+You could use an older version of the Raspberry Pi as well, but for that, you will need an additional component: **A USB Wifi Adapter** like this <a href="https://www.amazon.in/Edimax-EW-7811Un-Wi-Fi-Adapter-Black/dp/B003MTTJOY/ref=sr_1_1_sspa?ie=UTF8&qid=1541314937&sr=8-1-spons&keywords=edimax+wifi+adapter&psc=1" target="_blank">one</a>. You’ll have to do this since the Pi versions before 3 do not have inbuilt wifi card.
+2. (need to continue formatting from here.) **USB Stick - 16 GB - formatted to FAT32** like this <a href="https://www.amazon.in/SanDisk-Cruzer-Blade-SDCZ50-016G-135-Drive/dp/B002U1ZBG0/ref=sr_1_3?ie=UTF8&qid=1541834486&sr=8-3&keywords=sandisk+usb+16" target="_blank">one</a>.
+3. **SD Card - 16 GB** like this<a href="https://www.amazon.in/Sandisk-MicroSD-UHS-A1-Adapter-SDSQUAR-016G-GO61A/dp/B07D2JS5WN/ref=sr_1_2?ie=UTF8&qid=1541834327&sr=8-2&keywords=sandisk+ultra+micro+sd+16+gb" target="_blank">one</a>.
+4. **Power adapter for the Raspberry Pi.**
+Alternately, you could also use a **power bank** to power up the PiFi. We have tested it using <a href="https://www.amazon.in/Mi-20000mAH-Li-Polymer-Power-White/dp/B077RV8CCZ/ref=sr_1_2?s=electronics&ie=UTF8&qid=1541315097&sr=1-2&keywords=mi+power+bank" target="_blank">this power bank</a>, and it works well.
 
-Software
-Piratebox image file.
-This is essentially the core Piratebox ‘software’ that enables all the features and functionalities of the Piratebox. We need to ‘install’ this software as the base, after which we will be making some tweaks to the code to enable our simplistic video sharing and viewing functionality.
-For downloading this image file, you will need a torrent client like Deluge (available for windows, linux and macOS). You can use any other torrent client also. Doesn’t really matter. 
-Use the following link to download the Piratebox image file:
-For Raspberry Pi 1 A, B, B+, Zero & Zero-W : 
-For Rapsberry Pi 2 & 3, Rapsbperry Pi 3+: 
+### Software
+1. **Piratebox image file.**<br>
+This is essentially the core Piratebox ‘software’ that enables all the features and functionalities of the Piratebox. We need to ‘install’ this software as the base, after which we will be making some tweaks to the code to enable our simplistic video sharing and viewing functionality.<br>
+For downloading this image file, you will need a torrent client like Deluge (available for windows, linux and macOS). You can use any other torrent client also. Doesn’t really matter.<br> 
+Go to the following <a href="https://piratebox.cc/raspberry_pi:diy" target="_blank">website</a> and under the installation section, click on the appropriate download link (depending on your Raspberry Pi version), and your download should start automatically.<br>
 Once you have downloaded the Piratebox image file, we are ready to move on and start configuring the Pifi.
