@@ -30,7 +30,7 @@ You could use an older version of the Raspberry Pi as well, but for that, you wi
 4. **Power adapter for the Raspberry Pi.**
 Alternately, you could also use a **power bank** to power up the PiFi. We have tested it using <a href="https://www.amazon.in/Mi-20000mAH-Li-Polymer-Power-White/dp/B077RV8CCZ/ref=sr_1_2?s=electronics&ie=UTF8&qid=1541315097&sr=1-2&keywords=mi+power+bank" target="_blank">this power bank</a>, and it works well.
 
-Note: I usually buy <a href="https://www.amazon.in/Raspberry-Pi-3B-Motherboard-Combo/dp/B07BZY16SL/ref=sr_1_4?ie=UTF8&qid=1543384796&sr=8-4&keywords=raspberry+pi+3+b%2B+pibox" target="_blank">this combo kit</a>. It contains the Pi 3B+, power adapter for it & 1 8GB MicroSD card. That just leaves the USB stick, which I buy separately (like the one in the link above.
+Note: I usually buy <a href="https://www.amazon.in/Raspberry-Pi-3B-Motherboard-Combo/dp/B07BZY16SL/ref=sr_1_4?ie=UTF8&qid=1543384796&sr=8-4&keywords=raspberry+pi+3+b%2B+pibox" target="_blank">this combo kit</a>. It contains the Pi 3B+, an original casing for it, a power adapter for it & one 8GB MicroSD card. That just leaves the USB stick, which I buy separately (like the one in the link above.
 
 ### Software
 1. **Piratebox image file.**<br>
