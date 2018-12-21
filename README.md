@@ -61,13 +61,26 @@ Once you connect the PiFi to power, wait for 2-3 minutes till it fully boots up.
 However, before we start viewing/uploading videos on it, we need to make some basic settings. To do this we need to wirelessly connect to the PiFi, then access it via the command line and play around with some settings. So to do this:
 - First, go to your wireless networks (the place where you usually go to connect to a wifi network). <br>
 There you shall find a new network listed called ‘Pirate Box - Share Freely’. Go ahead and connect to that network, as you would with any other wifi network.
-- Once connected, you now need to ‘SSH’ into the PiFi. (in other words, you need to access the files in the PiFi wirelessly). To do this:<br>
-On Windows— install and open <a href="https://www.putty.org/" target="_blank">PuTTY</a>.<br>
-On MacOS or Linux— open the application called ‘Terminal’.
-- Once the application is open, type the following into the command line:<br>
-`ssh alarm@192.168.77.1`<br>
-And hit enter. <br>
-You will be prompted for a password. The password is ‘alarm’<br>
+- Once connected, you now need to ‘SSH’ into the PiFi. (in other words, you need to access the files in the PiFi wirelessly). 
+
+To do this:<br>
+
+**On Windows**
+- Install and open <a href="https://www.putty.org/" target="_blank">PuTTY</a>.
+- A dialogbox such as this will pop up:
+<img src="https://imgur.com/a/sbgFV3Z">
+- In the field called 'hostname' type in `alarm@192.168.77.1`
+- Then hit open.
+- The PuTTY terminal window will show up, asking you for the password. The password is 'alarm'.
+**---**<br>
+
+**On MacOS or Linux** 
+- Open the application called ‘Terminal’. 
+- Once the application is open, type the following into the command line: `ssh alarm@192.168.77.1`
+- And hit enter.
+- You will be prompted for a password. The password is ‘alarm’
+**---**<br>
+
 That’s it. By now you should have successfully ‘SSH’ed into the PiFi.<br>
 In your terminal, you should arrive on a screen something like this:<br>
 <br>
