@@ -69,7 +69,7 @@ To do this:<br>
 - Install and open <a href="https://www.putty.org/" target="_blank">PuTTY</a>.
 - A dialogbox such as this will pop up:<br>
 <img src="https://i.imgur.com/udG1u6U.png"><br>
-- In the field called 'hostname' type in `alarm@192.168.77.1`
+- In the field called 'hostname', type in `alarm@192.168.77.1`
 - Then hit open.
 - The PuTTY terminal window will show up, asking you for the password. The password is 'alarm'.
 
