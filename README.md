@@ -67,19 +67,17 @@ To do this:<br>
 
 **On Windows**
 - Install and open <a href="https://www.putty.org/" target="_blank">PuTTY</a>.
-- A dialogbox such as this will pop up:
-<img src="https://imgur.com/a/sbgFV3Z">
+- A dialogbox such as this will pop up:<br>
+<img src="https://i.imgur.com/udG1u6U.png"><br>
 - In the field called 'hostname' type in `alarm@192.168.77.1`
 - Then hit open.
 - The PuTTY terminal window will show up, asking you for the password. The password is 'alarm'.
-**---**<br>
 
 **On MacOS or Linux** 
 - Open the application called ‘Terminal’. 
 - Once the application is open, type the following into the command line: `ssh alarm@192.168.77.1`
 - And hit enter.
 - You will be prompted for a password. The password is ‘alarm’
-**---**<br>
 
 That’s it. By now you should have successfully ‘SSH’ed into the PiFi.<br>
 In your terminal, you should arrive on a screen something like this:<br>
