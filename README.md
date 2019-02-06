@@ -111,9 +111,9 @@ sudo systemctl enable timesave`
 ### 8// Activate the UPnP Media Server by copying over the config file:
 The UPnP Media Server enables you to connect to 'stream' content from the PiFi, without having to actually download that content on your device. In the PiFi, we want to be able to stream video content off the webpage, so we very much want to enable this funcationlity.
 
-Use the following command:
-`sudo cp /etc/minidlna.conf /etc/minidlna.conf.bkp
-sudo cp /opt/piratebox/src/linux.example.minidlna.conf /etc/minidlna.conf`
+Use the following command:<br>
+`sudo cp /etc/minidlna.conf /etc/minidlna.conf.bkp`
+`sudo cp /opt/piratebox/src/linux.example.minidlna.conf /etc/minidlna.conf`
 
 ### 9// Start the UPnP Media Server with:
 Now that you have activated the UPnP Media Server functioinality, you also need to 'start' it. 
