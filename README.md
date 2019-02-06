@@ -119,8 +119,8 @@ Use the following command:<br>
 Now that you have activated the UPnP Media Server functioinality, you also need to 'start' it. 
 
 For that, use the following command:
-`sudo systemctl start minidlna
-sudo systemctl enable minidlna`
+`sudo systemctl start minidlna`<br>
+`sudo systemctl enable minidlna`
 
 ### 10// Change the SSID
 The SSID is the name that is displayed for the PiFi in the list of wireless networks. Currently, you might have noticed that the name is 'Pirate Box: Share Freely'. In order to change this name, you need to edit some configuration files. 
