@@ -118,7 +118,7 @@ Use the following command:<br>
 ### 9// Start the UPnP Media Server with:
 Now that you have activated the UPnP Media Server functioinality, you also need to 'start' it. 
 
-For that, use the following command:
+For that, use the following command:<br>
 `sudo systemctl start minidlna`<br>
 `sudo systemctl enable minidlna`
 
