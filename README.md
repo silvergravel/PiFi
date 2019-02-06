@@ -112,7 +112,7 @@ sudo systemctl enable timesave`
 The UPnP Media Server enables you to connect to 'stream' content from the PiFi, without having to actually download that content on your device. In the PiFi, we want to be able to stream video content off the webpage, so we very much want to enable this funcationlity.
 
 Use the following command:<br>
-`sudo cp /etc/minidlna.conf /etc/minidlna.conf.bkp`
+`sudo cp /etc/minidlna.conf /etc/minidlna.conf.bkp`<br>
 `sudo cp /opt/piratebox/src/linux.example.minidlna.conf /etc/minidlna.conf`
 
 ### 9// Start the UPnP Media Server with:
@@ -130,7 +130,7 @@ To do so:
 `sudo nano /opt/piratebox/conf/hostapd.conf`
 - In this file you will find a line saying **ssid=Pirate Box: Share Freely**<br>
 Change this line to whatever name you want. For example, we changed it to **ssid=PiFi**<br>
-Once you have changed the name, save the changes by typing `cmd + o` on Mac or `ctrl + o` on Windows and Linux. Then hit `enter`. Then close the file by typing `cmd + x` on Mac or `ctrl + x` on Windows and Linux.
+Once you have changed the name, save the changes by typing `ctrl + o` on Mac or `ctrl + o` on Windows and Linux. Then hit `enter`. Then close the file by typing `ctrl + x` on Mac or `ctrl + x` on Windows and Linux.
 
 ### 11// Change the base website URL
 To access the video content on the PiFi, you need to open up the browser on your device and visit a website URL in order to access this content. Currently, this URL is set to **piratebox.lan**. We probably want to change that as well. 
