@@ -43,7 +43,7 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
 
         if (strpos($singleLine[$j], $filename) !== false){
           $video_info_string = $singleLine[$j];
-          $video_info = explode(",", $video_info_string);
+          $video_info = explode(";", $video_info_string);
           $caption = $video_info[1];
           $description = $video_info[2];
           $category = $video_info[3];
@@ -83,6 +83,8 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
     echo "<h2>$caption</h2>
           <h3>$description</h3>
           <h6>$category</h6>
+          <br>
+          <hr>
           </div>";
 
     }

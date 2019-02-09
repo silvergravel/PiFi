@@ -61,6 +61,7 @@ a{
 
 /* setting text styles */
 
+
 h1{
     font-family: 'suisse';
     font-size: 2em;
@@ -77,6 +78,13 @@ h2 {
   font-weight: 100;
   line-height: auto;
   margin: 0.5em 0 0.1em;
+}
+
+h2.page-title{
+  display: inline-block;
+  height: 100%;
+  margin: 0 ;
+  vertical-align: middle;
 }
 
 h3 {
@@ -208,7 +216,7 @@ p {
     width: 100%;
   }
 
-  
+
 
 @media all and (min-width: 800px){
 

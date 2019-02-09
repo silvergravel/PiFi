@@ -69,7 +69,7 @@ if(isset($_POST['delete_file']))
 
   <div class="logoContainer">
     <a href=""><img src="../img/logo_placeholder.png"></a>
-
+    <h2 class="page-title">Admin Panel</h2>
     <!-- તમારું સ્વાગત છે -->
   </div>
 

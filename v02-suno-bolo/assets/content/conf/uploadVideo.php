@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
             $category = $_POST['category'];
 
             $file = fopen($file_info_path,"a+");
-            echo fwrite($file, $fileName . ',' . $title . ',' . $subTitle . ',' . $category . "\n" );
+            echo fwrite($file, $fileName . ';' . $title . ';' . $subTitle . ';' . $category . "\n" );
             fclose($file);
 
             }
