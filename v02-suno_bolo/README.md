@@ -1,40 +1,35 @@
 ### PiFi v 2.0 - Suno Bolo
 
-Follow steps 1 to 12 in <a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01 - <strong>Smart Network</strong></a><br>
+To start off, follow steps 1 to 12 in <a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01 - <strong>Smart Network</strong></a><br>
 
-Then SSH into the PiFi. We need to modify a couple of files.
+Then SSH into the PiFi. We need to modify a couple of files to make PiFi-v02 work.
 
-### 13// Increase maximum file upload limit in php.ini
+## 13// Increase maximum file upload limit in php.ini
 
-Open up the `php.ini` file using the command:
+- Open up the `php.ini` file using the command:<br>
 `sudo nano /etc/php/php.ini`
-
-Inside this file, find the line:
+- Inside this file, find the line:<br>
 `upload_max_filesize=2M` (2M means 2 MB)<br>
 I changed the 2M to 600M. You could do the same.
-
-Then find the line:
+- Then find the line:<br>
 `post_max_size=8M` (8M means 8 MB)<br>
-I changed the 8M to 800M. You could do the same.
+I changed the 8M to 800M. You could do the same.<br>
 Whatever you change it to, make sure that IT IS MORE THAN THE UPLOAD_MAX_FILESIZE.
+- Save changes to the file. Then exit it.
 
-Save changes to the file. Then exit it.
 
+## 14// Increase maximum file upload limit in lighttpd.conf
 
-### 14// Increase maximum file upload limit in lighttpd.conf
-
-Now open up the `lighttpd.conf` file using the command:
-`sudo nano /opt/piratebox/conf/lighttpd/lighttpd.conf`
-
-Inside this file, find the line:
-`server.max-request-size = 5120` (basically means 5 MB)<br>
-I added a couple of zeroes, so it now lookes like:<br>
+- Now open up the `lighttpd.conf` file using the command:
+`sudo nano /opt/piratebox/conf/lighttpd/lighttpd.conf`<br>
+- Inside this file, find the line:<br>
+`server.max-request-size = 5120` (basically means 5 MB)
+- I added a couple of zeroes, so it now lookes like:<br>
 `server.max-request-size = 512000` (basically means 500 MB). You could do the same.
+- Save changes to the file. Then exit it.
 
-Save changes to the file. Then exit it.
 
-
-### 15// Copy base files from assets folder.
+## 15// Copy base files from assets folder.
 One last step before PiFi v2.0 is up and running. 
 
 We need to copy some of the base php, html and css files which render our little suno-bolo application
