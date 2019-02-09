@@ -8,6 +8,10 @@ The PiFi is an ongoing project that uses the Piratebox code as it’s starting p
 
 As we add newer features and functionalities to PiFi, we shall keep updating this readme file to appropriately guide any reader to be able to source the required hardware, software, and replicate the PiFi to whatever level of sophistication it stands at, at our end.
 
+### Who is this Read Me for?
+
+This readme has been written with the intention that even someone with little to no knowledge of the UNIX command line interface (and code in general), can follow, and successfully configure PiFi v 1.0. If this is still not comprehensive, or if at all, too detailed, then please let us know! Any and all kinds of feedback are welcome.
+
 ### Current Versions
 
 Currently we have built 2 versions. Each are being used / have been used for their own separate applications. If you enter the version folder in this repo, you will find a step by step guide that shall help you set up that particular PiFi. Enjoy!
@@ -18,12 +22,6 @@ Currently we have built 2 versions. Each are being used / have been used for the
 ### PiFi v 1.0
 
 Currently the PiFi has been configured as a self-standing wifi hotspot, which is NOT connected to the internet. Users can connect to the PiFi, and through the browser they can access the PiFi webpage. Here, they can share or view video content.
-
-### Who is this Read Me for?
-
-This readme has been written with the intention that even someone with little to no knowledge of the UNIX command line interface (and code in general), can follow, and successfully configure PiFi v 1.0. If this is still not comprehensive, or if at all, too detailed, then please let us know! Any and all kinds of feedback are welcome.
-
-
 
 
 ## 1.0// Components Needed
