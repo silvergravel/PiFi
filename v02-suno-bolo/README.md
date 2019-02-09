@@ -1,6 +1,6 @@
 ### PiFi v 2.0 - Suno Bolo
 
-Follow steps 1 to 12 in <a href="https://github.com/silvergravel/PiFi/tree/master/v02-smart_network" target="_blank">PiFi v01 - <strong>Suno Bolo</strong></a><br>
+Follow steps 1 to 12 in <a href="https://github.com/silvergravel/PiFi/tree/master/v02-smart_network" target="_blank">PiFi v01 - <strong>Smart Network</strong></a><br>
 
 Then SSH into the PiFi. We need to modify a couple of files.
 
