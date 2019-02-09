@@ -10,11 +10,11 @@ Open up the `php.ini` file using the command:
 `sudo nano /etc/php/php.ini`
 
 Inside this file, find the line:
-`upload_max_filesize=2M` (2M means 2 MB)
+`upload_max_filesize=2M` (2M means 2 MB)<br>
 I changed the 2M to 600M. You could do the same.
 
 Then find the line:
-`post_max_size=8M` (8M means 8 MB)
+`post_max_size=8M` (8M means 8 MB)<br>
 I changed the 8M to 800M. You could do the same.
 Whatever you change it to, make sure that IT IS MORE THAN THE UPLOAD_MAX_FILESIZE.
 
@@ -27,8 +27,8 @@ Now open up the `lighttpd.conf` file using the command:
 `sudo nano /opt/piratebox/conf/lighttpd/lighttpd.conf`
 
 Inside this file, find the line:
-`server.max-request-size = 5120` (basically means 5 MB)
-I added a couple of zeroes, so it now lookes like:
+`server.max-request-size = 5120` (basically means 5 MB)<br>
+I added a couple of zeroes, so it now lookes like:<br>
 `server.max-request-size = 512000` (basically means 500 MB). You could do the same.
 
 Save changes to the file. Then exit it.
@@ -58,7 +58,8 @@ Thats it! You should have landed on a home page with two big **'SUNO'** & **'BOL
 
 Remember, if you want to upload / delete **'SUNO Media'**, or if you want to view **'BOLO submissions'**, you will have to access the admin panel, which you can do by typing the URL:<br> 
 `your-pifi-URL/content/admin/`<br>
-In my case this is:<br>
+
+In my case it looks like:<br>
 `pifi.in/content/admin/`<br>
 
 Thats it! Have fun!
