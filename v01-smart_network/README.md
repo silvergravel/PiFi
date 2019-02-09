@@ -1,4 +1,4 @@
-### PiFi v 1.0
+### PiFi v 1.0 - Smart Network
 
 Currently the PiFi has been configured as a self-standing wifi hotspot, which is NOT connected to the internet. Users can connect to the PiFi, and through the browser they can access the PiFi webpage. Here, they can share or view video content.
 
