@@ -42,7 +42,7 @@ So:
 - Also, in the case of the **Shared** folder on the USB stick, be sure to delete all the existing files inside it, before you paste the files that have been provided in the assets folder.
 - Last thing to do— go to the **content** folder on the USB stick, rename the **index.html** file to **inactive.html**, and then, go to the **board** folder on the USB stick, and rename the **index.html** file to **inactive.html**.
 
-### 14// Test your PiFi!
+## 16// Test your PiFi!
 Power up your Pi once again. Give it 2-3 minutes, then go to your wireless networks list.
 
 Here you will find a new network named **PiFi** (or whatever else you changed the SSID name to). Connect to it.
