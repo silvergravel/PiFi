@@ -12,8 +12,8 @@ As we add newer features and functionalities to PiFi, we shall keep updating thi
 
 Currently we have built 2 versions. Each are being used / have been used for their own separate applications. If you enter the version folder in this repo, you will find a step by step guide that shall help you set up that particular PiFi. Enjoy!
 
-<a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01</a>
-<a href="https://github.com/silvergravel/PiFi/tree/master/v02-suno_bolo" target="_blank">PiFi v02</a>
+<a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01 - <strong>Smart Network</strong></a><br>
+<a href="https://github.com/silvergravel/PiFi/tree/master/v02-suno_bolo" target="_blank">PiFi v02 - <strong>Suno Bolo</strong></a><br>
 
 ### PiFi v 1.0
 
