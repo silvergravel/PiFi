@@ -173,9 +173,10 @@ We need to copy some of the base php, html and css files which render our basic 
 So:
 - Switch off the power to your Raspberry Pi. 
 - Remove the USB stick from it and insert it into your PC.
-- Now, in the assets folder provided in this repository, you will find three folders: **board**, **content** and **Shared**
+- Now, in the assets folder provided in this folder, you will find three sub-folders: **board**, **content** and **Shared**
 - Copy the contents inside each of these folders and paste them inside the equivalently named folders on the USB stick.
-- Last thing to do— in the **content** folder on the pendrive, rename the **index.html** file to **inactive.html**.
+- Also, in the case of the **Shared** folder on the USB stick, be sure to delete all the existing files inside it, before you paste the files that have been provided in the assets folder.
+- Last thing to do— in the **content** folder on the USB stick, rename the **index.html** file to **inactive.html**.
 
 ### 14// Test your PiFi!
 Power up your Pi once again. Give it 2-3 minutes, then go to your wireless networks list.
