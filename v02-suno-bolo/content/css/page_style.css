@@ -1,0 +1,298 @@
+/* normalize */
+
+* {
+  overflow: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, div, object, iframe, fieldset {
+  border: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+header, footer, footer, nav, section, article, hgroup, figure {
+  display: block;
+}
+
+legend {
+  display: none;
+}
+
+body {
+  font-size: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+
+
+
+
+/* installing fonts */
+
+@font-face{
+    font-family: 'Rasa';
+    src: url('../fonts/Rasa-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'suisse';
+    src: url('../fonts/suissebpintl-regular-webfont.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'suisse-light';
+    src: url('../fonts/suissebpintl-light-webfont.ttf') format('truetype');
+}
+
+/* setting text styles */
+
+h1{
+    font-family: 'suisse';
+    font-size: 2em;
+    font-weight: 400;
+    line-height: auto;
+    margin: 0;
+    display: inline;
+    color: #000000;
+}
+
+h2 {
+  font-family: 'suisse';
+  font-size: 1.1em;
+  font-weight: 100;
+  line-height: auto;
+  margin: 0.5em 0 0.1em;
+}
+
+h3 {
+  font-family: 'suisse-light';
+  font-size: 1em;
+  font-weight: 100;
+  line-height: auto;
+  margin: 0 0 0.25em;
+}
+
+h6 {
+  font-family: 'suisse';
+  font-size: 0.8em;
+  font-weight: 100;
+  line-height: auto;
+  margin: 0 0 0.25em;
+  color: rgb(108, 108, 108);
+}
+
+p {
+  font-family: 'suisse-light';
+  font-size: 1em;
+  font-weight: normal;
+  line-height: 1.5em;
+  margin: 0 0 1em;
+}
+
+/* header styling */
+
+.logoContainer{
+  background-color: white;
+  height: 60px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+  position: relative;
+  overflow: visible;
+}
+
+.logoContainer img{
+  height: 60px;
+  width: auto;
+  padding: 10px;
+}
+
+/* home styling */
+
+.primaryBtn{
+  background-color: rgb(210, 210, 210);
+  margin: 20px;
+  text-align: center;
+  height: 100px;
+  padding: 10px 0 0 0;
+}
+
+.primaryBtn--linkWrapper:hover .primaryBtn{
+  background-color: rgb(156, 156, 156);
+}
+
+.primaryBtn--linkWrapper:hover{
+  text-decoration: none;
+  color: black;
+}
+
+/* styling the suno bolo tabs */
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+}
+
+
+#uploadVideoBtnWrapper{
+  padding: 0 10px 0 10px;
+}
+
+#uploadVideoBtn{
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 100%;
+
+}
+
+#uploadVideoBtn:hover{
+  background-color: #777;
+}
+
+
+
+
+.video-block{
+  display: block;
+
+}
+
+
+
+.video-block , .page-title-wrapper {
+  padding: 0 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+  .video-player , .image-wrapper img{
+    width: 100%;
+    height: auto;
+  }
+
+  .audio-player{
+    width: 100%;
+  }
+
+  
+
+@media all and (min-width: 800px){
+
+.video-block , .page-title-wrapper {
+  width: 50%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+}
+
+
+input {
+  font-family: 'suisse';
+  font-size: 1em;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+textarea{
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px;
+
+}
+
+input[type=file]{
+  border: none;
+  font-family: 'suisse-light';
+  font-size: .75em;
+  padding: 0px;
+  height: inherit;
+}
+
+#sunoVideoList{
+  margin-top: 100px;
+  padding: 0 10px 0 10px;
+  width: 100%;
+
+}
+
+
+
+.forms{
+
+  margin: 0 0 0 0;
+  padding: 0 10px 0 10px;
+  width: 100%;
+
+}
+
+#uploadSuno{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+  background-color: rgba(209, 209, 209);
+  display: none;
+  z-index: 10;
+}
+
+
+
+.primaryToggleBar{
+  height: 40px;
+  margin-bottom: 60px;
+}
+
+.primaryToggleBar>button.tablink{
+  font-family: 'suisse';
+  text-align: center;
+  height: 40px;
+  font-size: 1em;
+  width: 50%;
+  padding:  0 10px 0 10px;
+
+}
+
+#closeUploadSunoPopUp{
+  float: right;
+}
+
+#closeUploadSunoPopUp>img{
+width:40px;
+}
