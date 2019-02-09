@@ -8,6 +8,12 @@ The PiFi is an ongoing project that uses the Piratebox code as it’s starting p
 
 As we add newer features and functionalities to PiFi, we shall keep updating this readme file to appropriately guide any reader to be able to source the required hardware, software, and replicate the PiFi to whatever level of sophistication it stands at, at our end.
 
+### Current Versions
+
+Currently we have built 2 versions. Each are being used / have been used for their own separate applications. If you enter the version folder in this repo, you will find a step by step guide that shall help you set up that particular PiFi. Enjoy!
+
+<a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01</a>
+<a href="https://github.com/silvergravel/PiFi/tree/master/v02-suno_bolo" target="_blank">PiFi v02</a>
 
 ### PiFi v 1.0
 
