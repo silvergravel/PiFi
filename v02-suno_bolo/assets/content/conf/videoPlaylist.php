@@ -72,8 +72,7 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
                   <img src=$videos_dir_path$encoded_file_name >
                 </a>
               </div>";
-              <script src="../plugins/responsive/responsive.ie10mobilefix.min.js"></script>
-              <link href="../plugins/responsive/responsive.min.css" rel="stylesheet" />
+        
 
     }else if($extension === "mp3" || $extension === "aac" || $extension === "wav"){
         echo "<audio class='audio-player' controls>
