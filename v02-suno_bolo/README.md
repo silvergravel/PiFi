@@ -1,4 +1,7 @@
 ### PiFi v 2.0 - Suno Bolo
+Suno Bolo PiFi is a small upgrade to the earlier Smart Netowork version. It is based on an existing use case wherein QR codes were being used to link people to a webpage where they could either consume content (Suno), or they could contribute content (Bolo). So with the PiFi, we have cut out need for QR codes or the internet. People can simply connect to the PiFi network, and in their browser they can consume or contribute content through the inteface. Suno Bolo also has an admin interface, for administrators to upload/delete content or to view content contributed by people.
+
+What follows are the instructions to set up PiFi v 2.0 - Suno Bolo.
 
 To start off, follow steps 1 to 12 in <a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01 - <strong>Smart Network</strong></a><br>
 
