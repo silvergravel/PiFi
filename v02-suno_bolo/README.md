@@ -3,6 +3,12 @@ Suno Bolo PiFi is a small upgrade to the earlier Smart Netowork version. It is b
 
 What follows are the instructions to set up PiFi v 2.0 - Suno Bolo.
 
+## 1.0// Components Needed
+
+Same as the ones needed in <a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01 - <strong>Smart Network</strong></a><br>
+
+## 2.0// Steps to configure and setup PiFi v 2.0 - Suno Bolo
+
 To start off, follow steps 1 to 12 in <a href="https://github.com/silvergravel/PiFi/tree/master/v01-smart_network" target="_blank">PiFi v01 - <strong>Smart Network</strong></a><br>
 
 Then SSH into the PiFi. We need to modify a couple of files to make PiFi-v02 work.
