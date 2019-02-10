@@ -8,7 +8,7 @@ $file_info_path = $file_info_path_;
 
 $errors = []; // Store all foreseen and unforseen errors here
 
-$fileExtensions = ['mp4', 'jpg', 'png', 'mp3']; // Get all the file extensions
+$fileExtensions = ['mp4', 'jpg', 'png', 'mp3', 'aac', 'wav', 'amr']; // Get all the file extensions
 
 $video_source_path = $_FILES['video_file']['name'];
 $path_parts = pathinfo($video_source_path);

@@ -9,7 +9,7 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
   $data = file_get_contents($videos_dir_path.$txt_file_name);
   $singleLine = explode("\n", $data);
 
-  $extensions_array = array('mp4','jpg','png','mp3');
+  $extensions_array = array('mp4','jpg','png','mp3', 'aac', 'wav', 'amr');
 
   $file_names = array();
 
@@ -68,16 +68,22 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
     }else if($extension === "jpg" || $extension === "png" ){
 
         echo "<div class='image-wrapper'>
-                <a href=$videos_dir_path$file_names[$i] target='_blank'>
+                <a href=$videos_dir_path$encoded_file_name target='_blank'>
                   <img src=$videos_dir_path$encoded_file_name >
                 </a>
               </div>";
+              <script src="../plugins/responsive/responsive.ie10mobilefix.min.js"></script>
+              <link href="../plugins/responsive/responsive.min.css" rel="stylesheet" />
 
-       }
-       else if($extension === "mp3"){
+    }else if($extension === "mp3" || $extension === "aac" || $extension === "wav"){
         echo "<audio class='audio-player' controls>
-                <source src=$videos_dir_path$encoded_file_name type='audio/mpeg'>
+                <source src=$videos_dir_path$encoded_file_name type=audio/$extension>
               </audio>";
+    }else if($extension === "amr"){
+        echo "<h2>$file_names[$i]</h2>
+              <a href=$videos_dir_path$encoded_file_name download>download</a>";
+
+
        }
 
     echo "<h2>$caption</h2>
