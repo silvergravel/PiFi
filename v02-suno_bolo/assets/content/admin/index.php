@@ -73,6 +73,7 @@ if(isset($_POST['delete_file']))
     <a href=""><img src="../img/logo_placeholder.png"></a>
     <h2 class="page-title">Admin Panel</h2>
     <!-- તમારું સ્વાગત છે -->
+    <button style="float:right"><a href="/content/admin/analyticslog.php">View Analytics Log</a></button>
   </div>
 
   <div class="primaryToggleBar">
@@ -85,6 +86,54 @@ if(isset($_POST['delete_file']))
 
   <div id='uploadVideoBtnWrapper'>
   <button id="uploadVideoBtn" onClick="openUploadPopUp()">UPLOAD MEDIA</button>
+  </div>
+
+  <div id="availableSpace">
+    <?php
+
+    $totUsedSpace = 0;
+
+    $sunoContentPath = '../../Shared/';
+    $boloContentPath = '../bolo-videos/';
+
+    if ($handle = opendir($sunoContentPath)) { //get the folder that contains the media.
+        /* This is the correct way to loop over the directory. */
+        while (false !== ($file = readdir($handle))) {
+          if($file != "." && $file != ".." && $file[0] != "."){
+          $totUsedSpace += filesize($sunoContentPath.$file)/1000000000; //file size in GB
+          }
+        }
+        closedir($handle);
+    }
+
+    if ($handle = opendir($boloContentPath)) { //get the folder that contains the media.
+        /* This is the correct way to loop over the directory. */
+        while (false !== ($file = readdir($handle))) {
+          if($file != "." && $file != ".." && $file[0] != "."){
+          $totUsedSpace += filesize($boloContentPath.$file)/1000000000; //file size in GB
+          }
+        }
+        closedir($handle);
+    }
+
+    $totUsedSpace = round($totUsedSpace, 2);
+    $totAvailableSpace = round(disk_free_space ( $sunoContentPath )/1000000000,2); //in GB
+    $totSpaceCapacity = $totUsedSpace+$totAvailableSpace;
+    $percentUsedSpace = ($totUsedSpace/$totSpaceCapacity)*100;
+
+    echo"<div style='margin:30px'>
+           <h2>Total Available Space on PiFi:</h2>
+           <h1><strong>".$totAvailableSpace." GB</strong> of ".$totSpaceCapacity." GB</h1>
+           <div style='height:20px;
+                       background-color: grey;'>
+             <div class='usedSpaceIndicator' style='height:100%;
+                                                    width:".round($percentUsedSpace,2)."%;
+                                                    background-color:black;'>
+             </div>
+           </div>
+         </div>"
+
+    ?>
   </div>
 
 <div id="uploadSuno">
@@ -126,6 +175,7 @@ if ($handle = opendir('../../Shared/')) { //get the folder that contains the med
       if($file != "." && $file != ".." && $file[0] != "." && $fileExtension != "txt"){
 
       echo "<h2>".$file."</h2>";
+      echo "<p>".(filesize('../../Shared/'.$file)/1000000)." MB</p>";
       echo "<form method='post' action=''>";
       echo "<input type='hidden' name='file_name' value='".$file."'>";
       echo "<input type='submit' name='delete_file' value='Delete File'>";
