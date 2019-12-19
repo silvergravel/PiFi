@@ -46,7 +46,7 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
           $video_info = explode(";", $video_info_string);
           $caption = $video_info[1];
           $description = $video_info[2];
-          $category = $video_info[3];
+          $district = $video_info[3];
 
         }
 
@@ -72,7 +72,7 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
                   <img src=$videos_dir_path$encoded_file_name >
                 </a>
               </div>";
-        
+
 
     }else if($extension === "mp3" || $extension === "aac" || $extension === "wav"){
         echo "<audio class='audio-player' controls>
@@ -87,7 +87,7 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
 
     echo "<h2>$caption</h2>
           <h3>$description</h3>
-          <h6>$category</h6>
+          <h6>$district</h6>
           <br>
           <hr>
           </div>";

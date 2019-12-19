@@ -47,10 +47,10 @@ if (isset($_POST['submit'])) {
 
             $title = $_POST['title'];
             $subTitle = $_POST['sub-title'];
-            $category = $_POST['category'];
+            $district = $_POST['district'];
 
             $file = fopen($file_info_path,"a+");
-            echo fwrite($file, $fileName . ';' . $title . ';' . $subTitle . ';' . $category . "\n" );
+            echo fwrite($file, $fileName . ';' . $title . ';' . $subTitle . ';' . $district . "\n" );
             fclose($file);
 
             }

@@ -70,7 +70,7 @@ if(isset($_POST['delete_file']))
 <body>
 
   <div class="logoContainer">
-    <a href=""><img src="../img/logo_placeholder.png"></a>
+    <a href=""><img src="../img/logo.png"></a>
     <h2 class="page-title">Admin Panel</h2>
     <!-- તમારું સ્વાગત છે -->
     <button style="float:right"><a href="/content/admin/analyticslog.php">View Analytics Log</a></button>
@@ -154,8 +154,21 @@ if(isset($_POST['delete_file']))
       <textarea rows="4" cols="50" name="sub-title"></textarea><br>
 
 
-      <h2>Category:</h2>
-      <input type="text" name="category"><br>
+      <h2>District:</h2>
+      <select name="district">
+        <option value="" disabled selected>--Please choose a district--</option>
+        <option value="ali rajpur">Ali Rajpur</option>
+        <option value="balasore">Balasore</option>
+        <option value="bhagalpur">Bhagalpur</option>
+        <option value="buxar">Buxar</option>
+        <option value="chikballapur">Chikballapur</option>
+        <option value="dungarpur">Dungarpur</option>
+        <option value="jhabua">Jhabua</option>
+        <option value="johrat">Johrat</option>
+        <option value="nalbari">Nalbari</option>
+        <option value="nalgonda">Nalgonda</option>
+        <option value="other">Other</option>
+      </select>
 
       <input type="submit" name="submit" value="Upload File Now" >
     </form>
@@ -198,7 +211,7 @@ if ($handle = opendir('../../Shared/')) { //get the folder that contains the med
   </div>
   <?php
   $videos_dir_path = '../bolo-videos/';
-  $file_name = NULL;
+  $file_name = '../bolo-videos/file_info.txt';
   makeVideoPlaylist($videos_dir_path, $file_name);
   ?>
 
