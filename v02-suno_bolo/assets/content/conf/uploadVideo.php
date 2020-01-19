@@ -48,9 +48,11 @@ if (isset($_POST['submit'])) {
             $title = $_POST['title'];
             $subTitle = $_POST['sub-title'];
             $district = $_POST['district'];
+            $block = $_POST['block'];
+            $village = $_POST['village'];
 
             $file = fopen($file_info_path,"a+");
-            echo fwrite($file, $fileName . ';' . $title . ';' . $subTitle . ';' . $district . "\n" );
+            echo fwrite($file, $fileName . ';' . $title . ';' . $subTitle . ';' . $district . ';' . $block . ';' . $village . "\n" );
             fclose($file);
 
             }

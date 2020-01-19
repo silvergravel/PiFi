@@ -47,6 +47,8 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
           $caption = $video_info[1];
           $description = $video_info[2];
           $district = $video_info[3];
+          $block = $video_info[4];
+          $village = $video_info[5];
 
         }
 
@@ -87,8 +89,16 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
 
     echo "<h2>$caption</h2>
           <h3>$description</h3>
-          <h6>$district</h6>
-          <br>
+          <h6><strong>$district</strong></h6>
+          <h6>$block | $village</h6>";
+    if($videos_dir_path === '../bolo-videos/'){
+      echo "<form method='post' action=''>
+            <input type='hidden' name='file_name' value='".$file_names[$i]."'>
+            <input type='submit' name='publish_to_suno' value='Publish To Suno'>
+            </form>";
+    }
+
+     echo "<br>
           <hr>
           </div>";
 
@@ -96,5 +106,7 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
 
   }
 }
+
+
 
 ?>

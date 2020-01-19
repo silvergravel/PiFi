@@ -19,6 +19,10 @@ logThisVisit();
   <head>
     <link rel="stylesheet" href="css/page_style.css">
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <script
+			  src="https://code.jquery.com/jquery-3.4.1.min.js"
+			  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+			  crossorigin="anonymous"></script>
     <title>Suno Bolo</title>
 
 
@@ -75,7 +79,7 @@ makeVideoPlaylist($videos_dir_path, $file_name);
 
 
     <h2>District:</h2>
-    <select name="district">
+    <select name="district" id="district_select">
       <option value="" disabled selected>--Please choose a district--</option>
       <option value="ali rajpur">Ali Rajpur</option>
       <option value="balasore">Balasore</option>
@@ -90,6 +94,34 @@ makeVideoPlaylist($videos_dir_path, $file_name);
       <option value="other">Other</option>
     </select>
 
+    <div id="block_selectors_wrapper">
+      <h2>Block:</h2>
+      <select class="block_select" id="block_selector_jhabua" name="block">
+        <option value="" disabled selected>--Please choose a block--</option>
+        <option value="j block 1">J Block 1</option>
+        <option value="j block 2">J Block 2</option>
+      </select>
+      <select class="block_select" id="block_selector_chikballapur" name="block">
+        <option value="" disabled selected>--Please choose a block--</option>
+        <option value="c block 1">C Block 1</option>
+        <option value="c block 2">C Block 2</option>
+      </select>
+    </div>
+
+    <div id="village_selectors_wrapper">
+      <h2>Village:</h2>
+      <select class="village_select" id="village_selector_jhabua" name="village">
+        <option value="" disabled selected>--Please choose a block--</option>
+        <option value="j village 1">J Village 1</option>
+        <option value="j village 2">J Village 2</option>
+      </select>
+      <select class="village_select" id="village_selector_chikballapur" name="village">
+        <option value="" disabled selected>--Please choose a block--</option>
+        <option value="c village 1">C Village 1</option>
+        <option value="c village 2">C Village 2</option>
+      </select>
+    </div>
+
     <input type="submit" name="submit" value="Upload File Now" >
 
   </form>
@@ -101,6 +133,9 @@ makeVideoPlaylist($videos_dir_path, $file_name);
     <script>
 
 
+
+
+
     var defaultOpen;
 
     // Based on selection on prev. page, capture the correct tab and click it (suno or bolo)
@@ -110,7 +145,6 @@ makeVideoPlaylist($videos_dir_path, $file_name);
       defaultOpen = "suno";
     }
 
-    console.log(defaultOpen);
     document.getElementById(defaultOpen).click();
 
     function openBlock(blockName,elmnt, color) {
@@ -126,9 +160,37 @@ makeVideoPlaylist($videos_dir_path, $file_name);
         document.getElementById(blockName).style.display = "block";
         elmnt.style.backgroundColor = color;
         localStorage.setItem( 'idToDisplay', elmnt.id );
-
     }
 
+    //functions
+
+    const hideSelectors = (selectorClass) => {
+      var selects = document.getElementsByClassName(selectorClass);
+      for (i = 0; i < selects.length; i++) {
+          selects[i].style.display = "none";
+          selects[i].setAttribute("disabled", true);
+      }
+    }
+
+    //hide the block & village dropdowns
+    document.getElementById("block_selectors_wrapper").style.display = "none";
+    document.getElementById("village_selectors_wrapper").style.display = "none";
+    hideSelectors("block_select");
+    hideSelectors("village_select");
+
+
+    $( "#district_select" ).change(function(event) {
+          hideSelectors("block_select");
+          hideSelectors("village_select");
+          console.log($(this).val());
+          document.getElementById("block_selectors_wrapper").style.display = "block";
+          document.getElementById(`block_selector_${$(this).val()}`).style.display = "block";
+          document.getElementById(`block_selector_${$(this).val()}`).removeAttribute("disabled");
+
+          document.getElementById("village_selectors_wrapper").style.display = "block";
+          document.getElementById(`village_selector_${$(this).val()}`).style.display = "block";
+          document.getElementById(`village_selector_${$(this).val()}`).removeAttribute("disabled");
+    });
 
     </script>
 

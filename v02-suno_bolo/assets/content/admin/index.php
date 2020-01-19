@@ -5,11 +5,50 @@ include '../conf/uploadVideo.php';
 
 
 $upload_directory = "../../Shared/";
+$bolo_videos_directory = "../bolo-videos/";
+$bolo_file_info_path = "../bolo-videos/file_info.txt";
 $file_info_path = "../../Shared/file_info.txt";
 
 uploadVideo($upload_directory, $file_info_path);
 
+if(isset($_POST['publish_to_suno']))
+{
+ $file_name = $_POST['file_name'];
+ $path_parts = pathinfo($file_name);
+ $file_name_wo_extension = $path_parts['filename'];
 
+ if(copy($bolo_videos_directory.$file_name, $upload_directory.$file_name )){
+   unlink($bolo_videos_directory.$file_name);
+ }
+
+ $file_related_info = file_get_contents($bolo_file_info_path);
+ $file_related_info = explode("\n", $file_related_info);
+
+ $out = array();
+
+ for($i = 0 ; $i < count($file_related_info) ; $i++ ){
+   if(strpos($file_related_info[$i], $file_name_wo_extension) !== false){
+     $toSendToSunoFileInfo = $file_related_info[$i];
+   }else{
+     $out[] = $file_related_info[$i];
+   }
+ }
+
+ $fp = fopen($bolo_file_info_path, "w+");
+ flock($fp, LOCK_EX);
+ foreach($out as $line) {
+   if($line !== ""){
+   fwrite($fp, $line . "\n");
+  }
+ }
+ flock($fp, LOCK_UN);
+ fclose($fp);
+
+ $file = fopen($file_info_path,"a+");
+ fwrite($file, $toSendToSunoFileInfo . "\n" );
+ fclose($file);
+
+}
 
 
 // <!-- actual file deletion and removal of related metadata entry from text file -->
@@ -61,6 +100,10 @@ if(isset($_POST['delete_file']))
 <head>
   <link rel="stylesheet" href="../css/page_style.css">
   <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+  <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
   <title>Suno Bolo Admin</title>
 
 
@@ -155,7 +198,7 @@ if(isset($_POST['delete_file']))
 
 
       <h2>District:</h2>
-      <select name="district">
+      <select name="district" id="district_select">
         <option value="" disabled selected>--Please choose a district--</option>
         <option value="ali rajpur">Ali Rajpur</option>
         <option value="balasore">Balasore</option>
@@ -169,6 +212,34 @@ if(isset($_POST['delete_file']))
         <option value="nalgonda">Nalgonda</option>
         <option value="other">Other</option>
       </select>
+
+      <div id="block_selectors_wrapper">
+        <h2>Block:</h2>
+        <select class="block_select" id="block_selector_jhabua" name="block">
+          <option value="" disabled selected>--Please choose a block--</option>
+          <option value="j block 1">J Block 1</option>
+          <option value="j block 2">J Block 2</option>
+        </select>
+        <select class="block_select" id="block_selector_chikballapur" name="block">
+          <option value="" disabled selected>--Please choose a block--</option>
+          <option value="c block 1">C Block 1</option>
+          <option value="c block 2">C Block 2</option>
+        </select>
+      </div>
+
+      <div id="village_selectors_wrapper">
+        <h2>Village:</h2>
+        <select class="village_select" id="village_selector_jhabua" name="village">
+          <option value="" disabled selected>--Please choose a block--</option>
+          <option value="j village 1">J Village 1</option>
+          <option value="j village 2">J Village 2</option>
+        </select>
+        <select class="village_select" id="village_selector_chikballapur" name="village">
+          <option value="" disabled selected>--Please choose a block--</option>
+          <option value="c village 1">C Village 1</option>
+          <option value="c village 2">C Village 2</option>
+        </select>
+      </div>
 
       <input type="submit" name="submit" value="Upload File Now" >
     </form>
@@ -243,6 +314,36 @@ function openUploadPopUp(){
 function closeUploadPopUp(){
   document.getElementById('uploadSuno').style.display = "none";
 }
+
+//functions
+
+const hideSelectors = (selectorClass) => {
+  var selects = document.getElementsByClassName(selectorClass);
+  for (i = 0; i < selects.length; i++) {
+      selects[i].style.display = "none";
+      selects[i].setAttribute("disabled", true);
+  }
+}
+
+//hide the block & village dropdowns
+document.getElementById("block_selectors_wrapper").style.display = "none";
+document.getElementById("village_selectors_wrapper").style.display = "none";
+hideSelectors("block_select");
+hideSelectors("village_select");
+
+
+$( "#district_select" ).change(function(event) {
+      hideSelectors("block_select");
+      hideSelectors("village_select");
+      console.log($(this).val());
+      document.getElementById("block_selectors_wrapper").style.display = "block";
+      document.getElementById(`block_selector_${$(this).val()}`).style.display = "block";
+      document.getElementById(`block_selector_${$(this).val()}`).removeAttribute("disabled");
+
+      document.getElementById("village_selectors_wrapper").style.display = "block";
+      document.getElementById(`village_selector_${$(this).val()}`).style.display = "block";
+      document.getElementById(`village_selector_${$(this).val()}`).removeAttribute("disabled");
+});
 
 </script>
 
