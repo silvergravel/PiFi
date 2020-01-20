@@ -1,6 +1,6 @@
 <?php
 
-function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
+function makeVideoPlaylist($videos_dir_path_, $txt_file_name_, $filters){
 
   //variables storing the arguements being parsed
   $videos_dir_path = $videos_dir_path_;
@@ -59,48 +59,51 @@ function makeVideoPlaylist($videos_dir_path_, $txt_file_name_){
     //for html to be able to read 'space' in 'src'
     $encoded_file_name = str_replace(' ', '%20', $file_names[$i]);
 
+    //if filter is applied, then show only those videos which have the filter in their meta data
+    if(in_array(trim($district), $filters)){
+      echo "<div class='video-block'>";
+      if($extension === "mp4"){
+          echo "<video class='video-player' controls>
+                <source src=$videos_dir_path$encoded_file_name#t=1 type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"'>
+                </video>";
+
+      }else if($extension === "jpg" || $extension === "png" ){
+
+          echo "<div class='image-wrapper'>
+                  <a href=$videos_dir_path$encoded_file_name target='_blank'>
+                    <img src=$videos_dir_path$encoded_file_name >
+                  </a>
+                </div>";
 
 
-    echo "<div class='video-block'>";
-    if($extension === "mp4"){
-        echo "<video class='video-player' controls>
-              <source src=$videos_dir_path$encoded_file_name#t=1 type='video/mp4; codecs=\"avc1.42E01E, mp4a.40.2\"'>
-              </video>";
-
-    }else if($extension === "jpg" || $extension === "png" ){
-
-        echo "<div class='image-wrapper'>
-                <a href=$videos_dir_path$encoded_file_name target='_blank'>
-                  <img src=$videos_dir_path$encoded_file_name >
-                </a>
-              </div>";
+      }else if($extension === "mp3" || $extension === "aac" || $extension === "wav"){
+          echo "<audio class='audio-player' controls>
+                  <source src=$videos_dir_path$encoded_file_name type=audio/$extension>
+                </audio>";
+      }else if($extension === "amr"){
+          echo "<h2>$file_names[$i]</h2>
+                <a href=$videos_dir_path$encoded_file_name download>download</a>";
 
 
-    }else if($extension === "mp3" || $extension === "aac" || $extension === "wav"){
-        echo "<audio class='audio-player' controls>
-                <source src=$videos_dir_path$encoded_file_name type=audio/$extension>
-              </audio>";
-    }else if($extension === "amr"){
-        echo "<h2>$file_names[$i]</h2>
-              <a href=$videos_dir_path$encoded_file_name download>download</a>";
+         }
 
+      echo "<h2>$caption</h2>
+            <h3>$description</h3>
+            <h6><strong>$district</strong></h6>
+            <h6>$block | $village</h6>";
+      if($videos_dir_path === '../bolo-videos/'){
+        echo "<form method='post' action=''>
+              <input type='hidden' name='file_name' value='".$file_names[$i]."'>
+              <input type='submit' name='publish_to_suno' value='Publish To Suno'>
+              </form>";
+      }
 
-       }
-
-    echo "<h2>$caption</h2>
-          <h3>$description</h3>
-          <h6><strong>$district</strong></h6>
-          <h6>$block | $village</h6>";
-    if($videos_dir_path === '../bolo-videos/'){
-      echo "<form method='post' action=''>
-            <input type='hidden' name='file_name' value='".$file_names[$i]."'>
-            <input type='submit' name='publish_to_suno' value='Publish To Suno'>
-            </form>";
+       echo "<br>
+            <hr>
+            </div>";
     }
 
-     echo "<br>
-          <hr>
-          </div>";
+
 
     }
 

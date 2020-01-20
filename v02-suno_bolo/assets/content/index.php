@@ -41,12 +41,55 @@ logThisVisit();
 
 <div id="sunoBlock" class="tabcontent">
 
+  <h3>Filter By:</h3>
+  <h2>District:</h2>
+  <form action="" method="post" enctype="multipart/form-data" id="form_bolovideos_filter" class="forms">
+    <select name="district_filter" id="district_filter">
+      <option value="all" selected>All</option>
+      <option value="ali rajpur">Ali Rajpur</option>
+      <option value="balasore">Balasore</option>
+      <option value="bhagalpur">Bhagalpur</option>
+      <option value="buxar">Buxar</option>
+      <option value="chikballapur">Chikballapur</option>
+      <option value="dungarpur">Dungarpur</option>
+      <option value="jhabua">Jhabua</option>
+      <option value="johrat">Johrat</option>
+      <option value="nalbari">Nalbari</option>
+      <option value="nalgonda">Nalgonda</option>
+      <option value="other">Other</option>
+    </select>
+    <input type="submit" name="apply_filters" value="Apply Filters" >
+  </form>
+
 <?php
 
 $videos_dir_path = '../Shared/';
 $file_name = 'file_info.txt';
+$allDistricts = ["ali rajpur", "balasore", "bhagalpur", "buxar" ,"chikballapur", "dungarpur", "jhabua", "johrat", "nalbari", "nalgonda", "other"];
+$selectedDistrictFilter = "all";
 
-makeVideoPlaylist($videos_dir_path, $file_name);
+
+
+
+
+
+if(isset($_POST['apply_filters'])){
+
+  //if some option is selected before clicking apply filter
+  if(isset($_POST['district_filter'])){
+    //if selected filter is "all" then set the filters to the all districts array
+    if($_POST['district_filter'] === "all")
+    { $filterDistrict = $allDistricts; }
+    //else set the filter to whatever district has been selected.
+    else{ $filterDistrict = [$_POST['district_filter']]; }
+    makeVideoPlaylist($videos_dir_path, $file_name, $filterDistrict);
+    $selectedDistrictFilter = $_POST['district_filter'];
+  }
+
+}else{
+  makeVideoPlaylist($videos_dir_path, $file_name, $allDistricts);
+}
+
 
 ?>
 
@@ -191,6 +234,10 @@ makeVideoPlaylist($videos_dir_path, $file_name);
           document.getElementById(`village_selector_${$(this).val()}`).style.display = "block";
           document.getElementById(`village_selector_${$(this).val()}`).removeAttribute("disabled");
     });
+
+    var selectedFilterVal = "<?php echo $selectedDistrictFilter ?>"
+
+    $(`#district_filter`).val(selectedFilterVal);
 
     </script>
 

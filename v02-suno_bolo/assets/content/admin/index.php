@@ -283,7 +283,8 @@ if ($handle = opendir('../../Shared/')) { //get the folder that contains the med
   <?php
   $videos_dir_path = '../bolo-videos/';
   $file_name = '../bolo-videos/file_info.txt';
-  makeVideoPlaylist($videos_dir_path, $file_name);
+  $allDistricts = ["ali rajpur", "balasore", "bhagalpur", "buxar" ,"chikballapur", "dungarpur", "jhabua", "johrat", "nalbari", "nalgonda", "other"];
+  makeVideoPlaylist($videos_dir_path, $file_name, $allDistricts);
   ?>
 
 </div>
